@@ -1,0 +1,17 @@
+<form>
+    <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="ex. user1" name="username" [(ngModel)] ="username">
+        <button mat-button *ngIf="username" matSuffix mat-icon-button aria-label="Clear" (click)="username=''">
+            <mat-icon>close</mat-icon>
+          </button>
+    </mat-form-field> <br>
+
+    <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" placeholder="ex. user1" name="password" [(ngModel)] ="password">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <mat-hint *ngIf="!password">Enter your password</mat-hint>
+    </mat-form-field>
+
+</form>
