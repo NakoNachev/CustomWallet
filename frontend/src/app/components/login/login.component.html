@@ -1,17 +1,27 @@
+<mat-card class="login-card">
 <form>
-    <mat-form-field>
-        <mat-label>Username</mat-label>
-        <input matInput placeholder="ex. user1" name="username" [(ngModel)] ="username">
-        <button mat-button *ngIf="username" matSuffix mat-icon-button aria-label="Clear" (click)="username=''">
-            <mat-icon>close</mat-icon>
-          </button>
-    </mat-form-field> <br>
+    <mat-card-header>
+        <mat-card-title>{{title}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content >
+        <mat-form-field appearance="outline" class="wider-input-field">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="ex. user1" name="username" [(ngModel)] ="username">
+            <!-- <button mat-button *ngIf="username" matSuffix mat-icon-button aria-label="Clear" (click)="username=''">
+                <mat-icon>close</mat-icon>
+            </button> -->
+            <mat-icon matSuffix>perm_identity</mat-icon>
+        </mat-form-field> <br>
 
-    <mat-form-field>
-        <mat-label>Password</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'" placeholder="ex. user1" name="password" [(ngModel)] ="password">
-        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-        <mat-hint *ngIf="!password">Enter your password</mat-hint>
-    </mat-form-field>
-
+        <mat-form-field appearance="outline" class="wider-input-field">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" placeholder="ex. user1" name="password" [(ngModel)] ="password">
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <mat-hint *ngIf="!password">Enter your password</mat-hint>
+        </mat-form-field>
+        <mat-card-actions align="end">
+            <button mat-raised-button color="primary"> Login </button>
+        </mat-card-actions>
+    </mat-card-content>
 </form>
+</mat-card>
