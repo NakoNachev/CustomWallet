@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,9 +12,13 @@ export class LoginComponent implements OnInit {
   public password: String;
   public hide:boolean = true;
   public title: String = "Login";
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  login(){
+    this.router.navigate(['/home'])
   }
 
 }
