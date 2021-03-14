@@ -1,10 +1,10 @@
-package customwallet;
+package expense;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 
-class CustomWalletApplicationTests {
+class ExpenseApplicationTests {
 
 	@Test
 	void contextLoads() {

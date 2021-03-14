@@ -7,7 +7,7 @@
 +++ Important annotations +++
 
 
-    -- To specify which path to scan for controllers - @ComponentScan(basePackages="resource") over the main app starter class
+    -- To specify which path to scan for controllers - @ComponentScan(basePackages="customwallet.resource") over the main app starter class
 
 +++ Adding swagger to the project +++
 

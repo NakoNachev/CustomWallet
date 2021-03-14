@@ -1,0 +1,30 @@
+version: "3.8"
+services:
+  database:
+    image: postgres:11-alpine
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: custom-wallet
+  pg-admin:
+    image: dpage/pgadmin4:latest
+    restart: always
+    ports:
+      - "20080:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.de
+      PGADMIN_DEFAULT_PASSWORD: admin
+  expense-service:
+    image: expense-service:latest
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+    environment:
+      DB_SERVER_HOST: database
+      DB_SERVER_PORT: 5432
+      API_DOCS_ENABLED: 'true'

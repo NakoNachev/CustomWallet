@@ -1,4 +1,4 @@
-package resource;
+package customwallet.resource;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

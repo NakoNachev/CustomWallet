@@ -1,4 +1,4 @@
-package core;
+package customwallet.core;
 
 public class JwtService {
 
