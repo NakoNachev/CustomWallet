@@ -1,0 +1,22 @@
++++ Specifics about app start:
+
+    -- docker build - t "expense-service:latest" .
+    -- docker run -d -p 8080:8080 expense-service:latest --name "..."
+
+
++++ Important annotations +++
+
+
+    -- To specify which path to scan for controllers - @ComponentScan(basePackages="customwallet.resource") over the main app starter class
+
++++ Adding swagger to the project +++
+
+    -- add the following dependency to the pom.xml:
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.5.2</version>
+        </dependency>
+
+    -- navigate to localhost:port/swagger-ui.html
+    -- to customize path, add an application property under springdoc.swagger-ui.path=/swagger-ui-custom.html
