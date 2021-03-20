@@ -23,21 +23,21 @@ public class ExpenseService {
         return this.expenseRepository.findAll();
     }
 
-    public Optional<Expense> getExpenseById(Long expenseId){
+    public Optional<Expense> getExpenseById(Integer expenseId){
         return this.expenseRepository.findById(expenseId);
     }
 
     public void createExpense(Expense expense){
         this.expenseRepository.save(expense);
     }
-    public Expense updateExpense(Long expenseId, Expense expense){
+    public Expense updateExpense(Integer expenseId, Expense expense){
         Optional<Expense> existingExpense = this.expenseRepository.findById(expenseId);
         if (existingExpense.isPresent()){
             this.expenseRepository.save(expense);
         }
         return expense;
     }
-    public void deleteExpense(Long expenseId){
+    public void deleteExpense(Integer expenseId){
         Optional<Expense> existingExpense = this.expenseRepository.findById(expenseId);
         if (existingExpense.isPresent()){
             this.expenseRepository.delete(existingExpense.get());

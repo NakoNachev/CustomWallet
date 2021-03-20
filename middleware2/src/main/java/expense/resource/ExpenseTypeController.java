@@ -1,7 +1,6 @@
 package expense.resource;
 
 import expense.core.ExpenseTypeService;
-import expense.model.Expense;
 import expense.model.ExpenseType;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +30,8 @@ public class ExpenseTypeController {
     }
 
     @PostMapping()
-    public ResponseEntity createExpense(@RequestBody() ExpenseType expenseType){
+    //TODO: Replace persistent entity with POJO or DTO Object
+    public ResponseEntity createExpenseType(@RequestBody() ExpenseType expenseType){
         this.expenseTypeService.createExpenseType(expenseType);
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }

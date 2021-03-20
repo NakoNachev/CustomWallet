@@ -38,6 +38,8 @@ public class ExpenseTypeService {
 
     public void deleteExpenseType(Long expenseTypeId){
         Optional<ExpenseType> existingExpenseType = this.expenseTypeRepository.findById(expenseTypeId);
-        this.expenseTypeRepository.delete(existingExpenseType.get());
+        if(existingExpenseType.isPresent()) {
+            this.expenseTypeRepository.delete(existingExpenseType.get());
+        }
     }
 }

@@ -25,11 +25,12 @@ public class ExpenseController {
     }
 
     @GetMapping("/{expenseId}")
-    public ResponseEntity<Optional<Expense>> getExpenseById(@PathVariable("expenseId") Long expenseId ) {
+    public ResponseEntity<Optional<Expense>> getExpenseById(@PathVariable("expenseId") Integer expenseId ) {
         return new ResponseEntity<>(this.expenseService.getExpenseById(expenseId), HttpStatus.OK);
     }
 
     @PostMapping()
+    //TODO: Replace persistent entity with POJO or DTO Object
     public ResponseEntity createExpense(@RequestBody() Expense expense){
         this.expenseService.createExpense(expense);
         return new ResponseEntity(HttpStatus.NO_CONTENT);

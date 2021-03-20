@@ -1,5 +1,6 @@
 package expense.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,6 +26,7 @@ public class Expense {
     private String expenseDescription;
     @Column(name="expense_date")
     private Date expenseDate;
+    @JsonIgnore
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "expense_type_id")
     private ExpenseType expenseType;
