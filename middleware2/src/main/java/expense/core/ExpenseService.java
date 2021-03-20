@@ -11,6 +11,7 @@ import java.util.Optional;
 @Service
 public class ExpenseService {
 
+
     @Autowired
     private final ExpenseRepository expenseRepository;
 
@@ -22,9 +23,27 @@ public class ExpenseService {
         return this.expenseRepository.findAll();
     }
 
-    //public Optional<Expense> getExpenseById(Integer expenseId){
-        //return this.expenseRepository.findById(expenseId);
-    //}
+    public Optional<Expense> getExpenseById(Long expenseId){
+        return this.expenseRepository.findById(expenseId);
+    }
+
+    public void createExpense(Expense expense){
+        this.expenseRepository.save(expense);
+    }
+    public Expense updateExpense(Long expenseId, Expense expense){
+        Optional<Expense> existingExpense = this.expenseRepository.findById(expenseId);
+        if (existingExpense.isPresent()){
+            this.expenseRepository.save(expense);
+        }
+        return expense;
+    }
+    public void deleteExpense(Long expenseId){
+        Optional<Expense> existingExpense = this.expenseRepository.findById(expenseId);
+        if (existingExpense.isPresent()){
+            this.expenseRepository.delete(existingExpense.get());
+        }
+    }
+
 
 
 }
