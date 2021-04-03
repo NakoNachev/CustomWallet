@@ -2,6 +2,7 @@ package expense.resource;
 
 import expense.core.ExpenseService;
 import expense.model.Expense;
+import expense.model.exceptions.NotFoundByIdException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -34,6 +35,27 @@ public class ExpenseController {
     public ResponseEntity createExpense(@RequestBody() Expense expense){
         this.expenseService.createExpense(expense);
         return new ResponseEntity(HttpStatus.NO_CONTENT);
+    }
+
+    @PutMapping("/{expenseId}")
+    public ResponseEntity<Expense> updateExpense(@PathVariable("expenseId") Integer expenseId, @RequestBody() Expense expense){
+        Optional<Expense> existingExpense = this.expenseService.getExpenseById(expenseId);
+        if (existingExpense.isPresent()){
+            this.expenseService.updateExpense(expenseId, expense);
+            return new ResponseEntity<>(expense, HttpStatus.OK);
+        } else {
+            throw new NotFoundByIdException(expenseId);
+        }
+    }
+
+    @DeleteMapping("/{expenseId}")
+    public void deleteExpense(@PathVariable("expenseId") Integer expenseId){
+        Optional<Expense> existingExpense = this.expenseService.getExpenseById(expenseId);
+        if (existingExpense.isPresent()){
+            this.expenseService.deleteExpense(expenseId);
+        } else {
+            throw new NotFoundByIdException(expenseId);
+        }
     }
 
 }

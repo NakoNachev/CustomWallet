@@ -30,6 +30,7 @@ public class ExpenseService {
     public void createExpense(Expense expense){
         this.expenseRepository.save(expense);
     }
+
     public Expense updateExpense(Integer expenseId, Expense expense){
         Optional<Expense> existingExpense = this.expenseRepository.findById(expenseId);
         if (existingExpense.isPresent()){

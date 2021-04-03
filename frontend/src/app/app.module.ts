@@ -15,20 +15,31 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import {MatTabsModule} from '@angular/material/tabs';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginGuard } from './auth/LoginGuard';
+import { AddExpenseComponent } from './components/add-expense/add-expense.component';
+import { ReviewComponent } from './components/review/review.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: '', component:AppComponent, canActivate:[LoginGuard] },
-  { path: 'home', component: HomeComponent}
+  // { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: 'home', component: HomeComponent},
+  { path: 'add-expense', component: AddExpenseComponent},
+  { path: 'review', component: ReviewComponent},
+  
 ]
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    AddExpenseComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +54,11 @@ const routes: Routes = [
     MatCardModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatTabsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule
   ],
   providers: [LoginGuard],
   bootstrap: [AppComponent]

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f75e679c-5be4-4ce8-b423-594f7fadd183" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/middleware2/src/main/java/expense/core/ExpenseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/middleware2/src/main/java/expense/core/ExpenseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware2/src/main/java/expense/core/ExpenseTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/middleware2/src/main/java/expense/core/ExpenseTypeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware2/src/main/java/expense/data/ExpenseTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/middleware2/src/main/java/expense/data/ExpenseTypeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware2/src/main/java/expense/resource/ExpenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/middleware2/src/main/java/expense/resource/ExpenseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware2/src/main/java/expense/resource/ExpenseTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/middleware2/src/main/java/expense/resource/ExpenseTypeController.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Tools\intellij\IntelliJ IDEA Community Edition 2020.2.2\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1qfJOnLKdqJqLOCMJA4wOfMuQC2" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f75e679c-5be4-4ce8-b423-594f7fadd183" name="Default Changelist" comment="" />
+      <created>1617464682387</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617464682387</updated>
+    </task>
+    <servers />
+  </component>
+</project>

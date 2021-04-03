@@ -1,0 +1,49 @@
+<mat-card class="add-expense-card">
+
+    <form>
+
+        <mat-card-header>
+            <mat-card-title>{{title}}</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+
+            <mat-form-field appearance="outline" class="wider-input-field">
+                <mat-label>Betrag</mat-label>
+                <input matInput placeholder="z.B 200">
+                <mat-icon matSuffix>euro_symbol</mat-icon>
+            </mat-form-field> <br>
+
+            <mat-form-field appearance="outline" class="wider-input-field">
+                <mat-label>Beschreibung</mat-label>
+                <input matInput placeholder="z.B Miete">
+                <mat-icon matSuffix>description</mat-icon>
+            </mat-form-field> <br>
+
+            <mat-form-field appearance="fill" class="wider-input-field">
+                <mat-label>Datum</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field> <br>
+
+            <mat-form-field appearance="outline" class="wider-input-field">
+                <mat-label>Typ</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let expenseType of expenseTypes" [value]="expenseType">{{expenseType}}</mat-option>
+                <!-- <mat-icon matSuffix>menu</mat-icon> -->
+                </mat-select>
+            </mat-form-field> <br>
+
+        </mat-card-content>
+
+        <mat-card-actions align="end">
+            <button mat-raised-button color="warn"> Kosten speichern </button>
+        </mat-card-actions>
+
+
+
+    </form>
+
+
+</mat-card>

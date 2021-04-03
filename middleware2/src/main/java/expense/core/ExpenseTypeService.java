@@ -20,7 +20,7 @@ public class ExpenseTypeService {
         return this.expenseTypeRepository.findAll();
     }
 
-    public Optional<ExpenseType> getExpenseTypeById(Long expenseTypeId){
+    public Optional<ExpenseType> getExpenseTypeById(Integer expenseTypeId){
         return this.expenseTypeRepository.findById(expenseTypeId);
     }
 
@@ -28,7 +28,7 @@ public class ExpenseTypeService {
         this.expenseTypeRepository.save(expenseType);
     }
 
-    public ExpenseType updateExpenseType(Long expenseTypeId, ExpenseType expenseType){
+    public ExpenseType updateExpenseType(Integer expenseTypeId, ExpenseType expenseType){
         Optional<ExpenseType> existingExpenseType = this.expenseTypeRepository.findById(expenseTypeId);
         if(existingExpenseType.isPresent()){
             this.expenseTypeRepository.save(expenseType);
@@ -36,7 +36,7 @@ public class ExpenseTypeService {
         return expenseType;
     }
 
-    public void deleteExpenseType(Long expenseTypeId){
+    public void deleteExpenseType(Integer expenseTypeId){
         Optional<ExpenseType> existingExpenseType = this.expenseTypeRepository.findById(expenseTypeId);
         if(existingExpenseType.isPresent()) {
             this.expenseTypeRepository.delete(existingExpenseType.get());
