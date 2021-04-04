@@ -25,9 +25,14 @@ public class ExpenseTypeController {
         return new ResponseEntity<>(this.expenseTypeService.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping("/{expenseTypeId}")
+    @GetMapping("/id/{expenseTypeId}")
     public ResponseEntity<Optional<ExpenseType>> getExpenseById(@PathVariable("expenseTypeId") Integer expenseTypeId ) {
         return new ResponseEntity<>(this.expenseTypeService.getExpenseTypeById(expenseTypeId), HttpStatus.OK);
+    }
+
+    @GetMapping("/description/{description}")
+    public ResponseEntity<Optional<ExpenseType>> getExpenseTypeByDescription(@PathVariable("description") String description){
+        return new ResponseEntity<>(this.expenseTypeService.getExpenseTypeByDescription(description), HttpStatus.OK);
     }
 
     @PostMapping()

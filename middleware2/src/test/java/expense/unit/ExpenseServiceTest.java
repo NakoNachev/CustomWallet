@@ -41,14 +41,16 @@ public class ExpenseServiceTest {
                 .expenseAmount(200)
                 .expenseDate(new Date(Calendar.getInstance().getTime().getTime()))
                 .expenseDescription("Expense 1")
-                .expenseType(expenseType1).build();
+                //.expenseType(expenseType1).build();
+                .build();
 
         expense2 = Expense.builder()
                 .expenseId(2)
                 .expenseAmount(300)
                 .expenseDate(new Date(Calendar.getInstance().getTime().getTime()))
                 .expenseDescription("Expense 2")
-                .expenseType(expenseType2).build();
+                .build();
+                //.expenseType(expenseType2).build();
 
         expenseType1 = ExpenseType.builder()
                 .expenseTypeId(1)

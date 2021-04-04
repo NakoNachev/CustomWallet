@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {RouterModule, Routes} from '@angular/router'
 
 import { AppComponent } from './app.component';
@@ -24,6 +24,8 @@ import { ReviewComponent } from './components/review/review.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -39,7 +41,7 @@ const routes: Routes = [
     LoginComponent,
     HomeComponent,
     AddExpenseComponent,
-    ReviewComponent
+    ReviewComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,10 @@ const routes: Routes = [
     MatTabsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    CommonModule
   ],
   providers: [LoginGuard],
   bootstrap: [AppComponent]

@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Builder
@@ -19,6 +20,6 @@ public class ExpenseType {
     private Integer expenseTypeId;
     @Column(name="expense_type_description")
     private String expenseTypeDescription;
-    @OneToOne(mappedBy="expenseType")
-    private Expense expense;
+    /*@OneToMany(mappedBy="expenseType")
+    private List<Expense> expense;*/
 }

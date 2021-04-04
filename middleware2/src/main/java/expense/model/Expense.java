@@ -26,8 +26,9 @@ public class Expense {
     private String expenseDescription;
     @Column(name="expense_date")
     private Date expenseDate;
-    @JsonIgnore
-    @OneToOne(cascade = CascadeType.ALL)
+    @Column(name="expense_type_id")
+    private Integer expenseTypeId;
+    /*@ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "expense_type_id")
-    private ExpenseType expenseType;
+    private ExpenseType expenseType;*/
 }

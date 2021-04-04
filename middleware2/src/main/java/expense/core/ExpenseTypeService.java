@@ -24,6 +24,10 @@ public class ExpenseTypeService {
         return this.expenseTypeRepository.findById(expenseTypeId);
     }
 
+    public Optional<ExpenseType> getExpenseTypeByDescription(String expenseTypeDescription){
+        return this.expenseTypeRepository.getByDescription(expenseTypeDescription);
+    }
+
     public void createExpenseType(ExpenseType expenseType){
         this.expenseTypeRepository.save(expenseType);
     }
