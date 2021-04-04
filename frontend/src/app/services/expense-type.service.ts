@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
 
@@ -21,8 +21,6 @@ export class ExpenseTypeService {
   }
 
   getExpenseTypeByDescription(description: string) {
-    let params: HttpParams = new HttpParams();
-    params = params.set("description", description)
     return this.apiService.get(`/api/v1/expense-type/description/${description}`)
   }
 }

@@ -1,0 +1,6 @@
+sonar-scanner.bat -D"sonar.projectKey=custom-wallet-frontend" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.login=2ddaed4eea9ae118dff61b4e6aa2c0cedb25a0ba"
+mvn sonar:sonar \
+  -Dsonar.projectKey=custom-wallet-middleware \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.login=a6611a53e36f1d65059dbd1b1c61c594953699a9
+a6611a53e36f1d65059dbd1b1c61c594953699a9

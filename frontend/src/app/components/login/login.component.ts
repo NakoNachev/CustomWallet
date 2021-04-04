@@ -8,10 +8,10 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  public username: String;
-  public password: String;
+  public username: string;
+  public password: string;
   public hide:boolean = true;
-  public title: String = "Login";
+  public title: string = "Login";
   constructor(private router: Router) { }
 
   ngOnInit(): void {

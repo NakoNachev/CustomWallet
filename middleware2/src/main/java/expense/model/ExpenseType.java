@@ -20,6 +20,4 @@ public class ExpenseType {
     private Integer expenseTypeId;
     @Column(name="expense_type_description")
     private String expenseTypeDescription;
-    /*@OneToMany(mappedBy="expenseType")
-    private List<Expense> expense;*/
 }

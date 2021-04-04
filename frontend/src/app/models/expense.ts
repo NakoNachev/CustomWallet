@@ -1,4 +1,3 @@
-import { ExpenseType } from "./expenseType";
 
 export interface Expense {
     expenseAmount: number;
