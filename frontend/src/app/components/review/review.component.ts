@@ -41,4 +41,11 @@ export class ReviewComponent implements OnInit {
     }
   }
 
+  private async deleteExpense(expenseId) {
+    await this.expenseService.deleteExpenseById(expenseId).toPromise().then((res) => {
+      location.reload()
+    })
+  }
+
+
 }

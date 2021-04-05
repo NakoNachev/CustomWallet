@@ -16,4 +16,8 @@ export class ExpenseService {
   public saveExpense(expense: Expense) {
     return this.apiService.post("/api/v1/expense", expense)
   }
+
+  public deleteExpenseById(expenseId: string) {
+    return this.apiService.delete(`/api/v1/expense/${expenseId}`)
+  }
 }
