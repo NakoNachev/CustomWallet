@@ -26,6 +26,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -63,7 +66,11 @@ const routes: Routes = [
     MatSelectModule,
     HttpClientModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule
+    
   ],
   providers: [LoginGuard],
   bootstrap: [AppComponent]

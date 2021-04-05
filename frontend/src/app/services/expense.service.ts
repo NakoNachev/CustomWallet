@@ -9,6 +9,10 @@ export class ExpenseService {
 
   constructor(private apiService: ApiService) { }
 
+  public getExpenses() {
+    return this.apiService.get("/api/v1/expense")
+  }
+
   public saveExpense(expense: Expense) {
     return this.apiService.post("/api/v1/expense", expense)
   }

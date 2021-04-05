@@ -14,10 +14,7 @@ export class ExpenseTypeService {
   }
 
   getExpenseTypeById(expenseTypeId: string) {
-
-    let params: HttpParams = new HttpParams()
-    params.set("expenseTypeId",expenseTypeId)
-    return this.apiService.get('/api/v1/expense-type/id/', params)
+    return this.apiService.get(`/api/v1/expense-type/id/${expenseTypeId}`)
   }
 
   getExpenseTypeByDescription(description: string) {
