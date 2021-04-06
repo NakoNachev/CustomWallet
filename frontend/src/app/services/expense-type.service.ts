@@ -1,5 +1,6 @@
 import { HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ExpenseType } from '../models/expenseType';
 import { ApiService } from './api.service';
 
 @Injectable({
@@ -19,5 +20,9 @@ export class ExpenseTypeService {
 
   getExpenseTypeByDescription(description: string) {
     return this.apiService.get(`/api/v1/expense-type/description/${description}`)
+  }
+
+  saveExpenseType(expenseType: ExpenseType){
+    return this.apiService.post('/api/v1/expense-type', expenseType)
   }
 }

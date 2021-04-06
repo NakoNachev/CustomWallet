@@ -17,6 +17,7 @@ import java.util.List;
 public class ExpenseType {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer expenseTypeId;
     @Column(name="expense_type_description")
     private String expenseTypeDescription;

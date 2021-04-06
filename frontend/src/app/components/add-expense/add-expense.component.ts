@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Expense } from 'src/app/models/expense';
+import { ExpenseType } from 'src/app/models/expenseType';
 import { ExpenseTypeService } from 'src/app/services/expense-type.service';
 import { ExpenseService } from 'src/app/services/expense.service';
 
@@ -11,9 +12,10 @@ import { ExpenseService } from 'src/app/services/expense.service';
 })
 export class AddExpenseComponent implements OnInit {
 
-  public title: string = "Kosten hinzufügen";
+  public title: string = "Add expense";
   public expenseTypes: string[] = [];
   expenseForm: FormGroup
+  expenseTypeForm: FormGroup
 
   constructor(
     private expenseTypeService: ExpenseTypeService,
@@ -22,11 +24,15 @@ export class AddExpenseComponent implements OnInit {
     ) {
 
     this.expenseForm = this.fb.group({
-      amount: ['', Validators.required],
+      amount: ['', [Validators.required, Validators.min(0)]],
       description: ['', Validators.required],
       date: ['', Validators.required],
       type: ['', Validators.required]
     });
+
+    this.expenseTypeForm = this.fb.group({
+      expenseTypeDescription:  ['', Validators.required]
+    })
    }
 
   ngOnInit(): void {
@@ -39,7 +45,7 @@ export class AddExpenseComponent implements OnInit {
     })
   }
 
-  async submitForm(){
+  async submitExpenseForm(){
     if (this.expenseForm.valid) {
       let newExpense: Expense = {expenseAmount: 0, expenseDescription: "", expenseDate: new Date(), expenseTypeId: null}
       
@@ -57,6 +63,16 @@ export class AddExpenseComponent implements OnInit {
       this.expenseService.saveExpense(newExpense).subscribe((res) => {
         console.log("response", res)
       })
+    }
+  }
+
+  async submitExpenseTypeForm(){
+    if (this.expenseTypeForm.valid) {
+      console.log("valid")
+      let newExpenseType: ExpenseType = {expenseTypeDescription: ""}
+      console.log("vlaiue", this.expenseTypeForm.value)
+      newExpenseType.expenseTypeDescription = this.expenseTypeForm.value.expenseTypeDescription
+      this.expenseTypeService.saveExpenseType(newExpenseType).subscribe()
     }
   }
 

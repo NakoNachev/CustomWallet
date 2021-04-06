@@ -1,34 +1,37 @@
 <mat-card class="add-expense-card">
 
-    <form [formGroup]="expenseForm" (ngSubmit)="submitForm()">
+    <form [formGroup]="expenseForm" (ngSubmit)="submitExpenseForm()">
 
         <mat-card-header>
             <mat-card-title>{{title}}</mat-card-title>
         </mat-card-header>
 
         <mat-card-content>
-
+            
+            <div *ngIf="expenseForm.controls['amount'].hasError('min')">
+                Minimum required number is 1.
+          </div> 
             <mat-form-field appearance="outline" class="wider-input-field">
-                <mat-label>Betrag</mat-label>
-                <input matInput placeholder="z.B 200" formControlName="amount">
+                <mat-label>Amount</mat-label>
+                <input matInput type="number" placeholder="z.B 200" formControlName="amount">
                 <mat-icon matSuffix>euro_symbol</mat-icon>
             </mat-form-field> <br>
 
             <mat-form-field appearance="outline" class="wider-input-field">
-                <mat-label>Beschreibung</mat-label>
+                <mat-label>Description</mat-label>
                 <input matInput placeholder="z.B Miete" formControlName="description">
                 <mat-icon matSuffix>description</mat-icon>
             </mat-form-field> <br>
 
             <mat-form-field appearance="fill" class="wider-input-field">
-                <mat-label>Datum</mat-label>
+                <mat-label>Date</mat-label>
                 <input matInput [matDatepicker]="picker" formControlName="date">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field> <br>
 
             <mat-form-field appearance="outline" class="wider-input-field">
-                <mat-label>Typ</mat-label>
+                <mat-label>Type</mat-label>
                 <mat-select formControlName="type">
                     <mat-option *ngFor="let expenseType of expenseTypes" [value]="expenseType">{{expenseType}}</mat-option>
                 <!-- <mat-icon matSuffix>menu</mat-icon> -->
@@ -38,12 +41,36 @@
         </mat-card-content>
 
         <mat-card-actions align="end">
-            <button mat-raised-button color="warn"> Kosten speichern </button>
+            <button mat-raised-button color="primary"> Save expense </button>
         </mat-card-actions>
-
-
 
     </form>
 
+</mat-card>
+
+
+<mat-card class="add-expense-type-card">
+
+    <form [formGroup]="expenseTypeForm" (ngSubmit)="submitExpenseTypeForm()">
+
+        <mat-card-header>
+            <mat-card-title>Add expense type</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+
+            <mat-form-field appearance="outline" class="wider-input-field">
+                <mat-label>Expense Type</mat-label>
+                <input matInput placeholder="ex. telefon" formControlName="expenseTypeDescription">
+                <mat-icon matSuffix>description</mat-icon>
+            </mat-form-field> <br>
+
+        </mat-card-content>
+
+        <mat-card-actions align="end">
+            <button mat-raised-button color="accent"> Save type </button>
+        </mat-card-actions>
+
+    </form>
 
 </mat-card>

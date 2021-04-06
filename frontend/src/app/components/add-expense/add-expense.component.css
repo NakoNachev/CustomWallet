@@ -1,5 +1,16 @@
 .add-expense-card {
-    margin: 5rem auto;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    margin-left: 15rem;
+    float:left;
+    width: 25rem;
+  }
+
+  .add-expense-type-card {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    margin-right: 15rem;
+    float: right;
     width: 25rem;
   }
 

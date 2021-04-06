@@ -17,7 +17,7 @@
   <a *ngFor="let link of navLinks" mat-tab-link
     [routerLink]="link.link"
     routerLinkActive>
-    {{link.name}}
+    {{link.name}} &nbsp; <mat-icon>{{link.icon}}</mat-icon>
   </a>
 </nav>
 
