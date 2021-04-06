@@ -12,7 +12,7 @@ import { ExpenseService } from 'src/app/services/expense.service';
 })
 export class ReviewComponent implements OnInit {
 
-  displayedColumns: string[] = ['expenseAmount', 'expenseDescription', 'expenseDate', 'expenseTypeId', 'test'];
+  displayedColumns: string[] = ['expenseAmount', 'expenseDescription', 'expenseDate', 'expenseTypeDescription', 'test'];
   dataSource: MatTableDataSource<Expense>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -22,7 +22,7 @@ export class ReviewComponent implements OnInit {
    }
 
  ngOnInit(): void {
-  this.expenseService.getExpenses().toPromise().then((data) =>{
+  this.expenseService.getExpensesWithExpenseTypeDescription().toPromise().then((data) =>{
     if (data) {
       console.log("data", data)
       this.dataSource = new MatTableDataSource(data)

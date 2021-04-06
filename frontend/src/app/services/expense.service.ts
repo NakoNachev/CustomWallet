@@ -13,6 +13,10 @@ export class ExpenseService {
     return this.apiService.get("/api/v1/expense")
   }
 
+  public getExpensesWithExpenseTypeDescription() {
+    return this.apiService.get("/api/v1/expense/mappedExpenseTypeDescription")
+  }
+
   public saveExpense(expense: Expense) {
     return this.apiService.post("/api/v1/expense", expense)
   }

@@ -1,5 +1,6 @@
 package expense.resource;
 
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import expense.core.ExpenseService;
 import expense.model.Expense;
 import expense.model.exceptions.NotFoundByIdException;
@@ -28,6 +29,11 @@ public class ExpenseController {
     @GetMapping("/{expenseId}")
     public ResponseEntity<Optional<Expense>> getExpenseById(@PathVariable("expenseId") Integer expenseId ) {
         return new ResponseEntity<>(this.expenseService.getExpenseById(expenseId), HttpStatus.OK);
+    }
+
+    @GetMapping("/mappedExpenseTypeDescription")
+    public ResponseEntity<List<ObjectNode>> getMappedExpenseTypeDescription() {
+        return new ResponseEntity<>(this.expenseService.getExpenseWithExpenseTypeDescription(), HttpStatus.OK);
     }
 
     @PostMapping()

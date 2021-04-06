@@ -25,9 +25,9 @@
         <td mat-cell *matCellDef="let row"> {{row.expenseDate}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="expenseTypeId">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header class="header"> Type id</th>
-        <td mat-cell *matCellDef="let row"> {{row.expenseTypeId}} </td>
+      <ng-container matColumnDef="expenseTypeDescription">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="header"> Expense Type</th>
+        <td mat-cell *matCellDef="let row"> {{row.expenseTypeDescription}} </td>
       </ng-container>
   
       <ng-container matColumnDef="test">
